@@ -73,30 +73,30 @@
       <div class="intro">
         <div class="eyebrow">الخدمات الإلكترونية للموظفين</div>
         <h1>مرحبًا بك في بوابة مدائن</h1>
-        <p>أدخل اسمك للمتابعة إلى الخدمة. تأكد دائمًا من مصدر الرابط قبل إدخال أي معلومات في صفحات تصل إليك عبر البريد أو الرسائل.</p>
-        <div class="mini"><span class="dot"></span><span>خدمة داخلية — تجربة توعوية</span></div>
+        <p>يمكنك من خلال البوابة الوصول إلى الخدمات الداخلية المخصصة للموظفين ومتابعة الطلبات والخدمات الإلكترونية.</p>
+        <div class="mini"><span class="dot"></span><span>بوابة الخدمات الداخلية للموظفين</span></div>
       </div>
 
       <div class="panel">
         <div class="form-wrap" id="formWrap">
           <h2>تسجيل الدخول</h2>
-          <p class="sub">يرجى إدخال الاسم للمتابعة.</p>
+          <p class="sub">أدخل اسم الموظف للمتابعة إلى البوابة.</p>
           <form id="awarenessForm" autocomplete="off">
-            <label for="name">الاسم</label>
+            <label for="name">اسم الموظف</label>
             <input id="name" name="name" type="text" placeholder="اكتب اسمك هنا" maxlength="60" required />
             <button type="submit">متابعة</button>
           </form>
-          <div class="hint">لن يتم حفظ أو إرسال أي بيانات من هذه الصفحة.</div>
+          <div class="hint">الدخول مخصص لموظفي مدائن</div>
         </div>
 
         <div class="result" id="result" role="status" aria-live="polite">
           <div class="alert-icon">!</div>
           <h2 id="caughtTitle">قفطناك 👀</h2>
           <p>كتبت اسمك في صفحة وصلت لك عبر رابط قبل ما تتحقق منها.</p>
-          <p>هذه كانت <strong>تجربة توعوية آمنة</strong> لمحاكاة أسلوب من أساليب التصيد الإلكتروني، ولم يتم إرسال أو تخزين الاسم الذي كتبته.</p>
+          <p>هذه كانت <strong>تجربة توعوية آمنة</strong> لمحاكاة أحد أساليب التصيد الإلكتروني. الاسم الذي كتبته لم يتم إرساله أو تخزينه.</p>
           <div class="lesson">
             <strong>وش المفروض تسوي المرة الجاية؟</strong><br>
-            افحص عنوان الموقع، تأكد من المرسل، لا تدخل بيانات حساسة من رابط غير متوقع، وإذا شكّيت في الرسالة تواصل مع قسم التقنية قبل الضغط أو إدخال أي معلومات.
+            افحص عنوان الموقع، تأكد من المرسل، ولا تدخل أي بيانات في رابط غير متوقع. وإذا شكّيت في الرسالة، تواصل مع قسم التقنية قبل الضغط أو إدخال أي معلومات.
           </div>
           <button class="again" id="againBtn" type="button">إعادة التجربة</button>
         </div>
@@ -104,7 +104,7 @@
     </section>
   </main>
 
-  <footer>تجربة توعوية للأمن السيبراني — لا تجمع هذه الصفحة أي بيانات</footer>
+  <footer>© مدائن — جميع الحقوق محفوظة</footer>
 
   <script>
     const form = document.getElementById('awarenessForm');
@@ -119,8 +119,7 @@
       const rawName = nameInput.value.trim();
       if (!rawName) return;
 
-      // The value stays only in this browser tab. No network request, storage,
-      // analytics, cookies, localStorage, or form submission is used.
+      // Awareness simulation only: no network request or persistent storage is used.
       caughtTitle.textContent = `قفطناك يا ${rawName} 👀`;
       formWrap.style.display = 'none';
       result.style.display = 'block';
